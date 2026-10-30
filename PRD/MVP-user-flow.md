@@ -29,7 +29,7 @@ The distinction between a display layer and a detection rule remains explicit: h
 | Agent activity | Recent trace and analyst actions | Inspect investigation history |
 | Feedback panel | Reviewed cases and scoped adaptation | Review, approve, or roll back |
 
-The desktop map stays central. On narrower screens, context moves beneath the map and panels stack. There is no mandatory walkthrough before monitoring.
+The desktop map stays central. On narrower screens, a compact configuration selector replaces the left list, map layers expand on demand, context moves beneath the map, and panels stack. There is no mandatory walkthrough before monitoring.
 
 ## Primary flow: select, inspect, decide
 

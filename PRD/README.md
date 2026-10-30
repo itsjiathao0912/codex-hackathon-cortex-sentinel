@@ -5,6 +5,7 @@ Updated 2026-10-31. This revision replaces the multi-screen wizard with a single
 - [Interactive wireframe](wireframe.html): download or clone, then open in any modern browser. No server, API key, or network connection is required.
 - [Revised MVP flow and scope](MVP-user-flow.md)
 - [World Monitor research and design decisions](World-Monitor-research.md)
+- [Three-loop verification and self-review](Verification-review.md)
 
 ![Map-first wireframe preview](wireframe-preview.png)
 
