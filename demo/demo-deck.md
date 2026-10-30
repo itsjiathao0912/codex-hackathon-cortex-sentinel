@@ -1,0 +1,89 @@
+---
+marp: true
+theme: default
+paginate: true
+size: 16:9
+---
+
+# Cortex Sentinel
+
+## [One sentence: who it helps and what it changes]
+
+- [Team name] · [Presenter]
+- Regional Codex Hackathon Vietnam
+
+<!-- Timing: 0:00–0:25. Speaker script: demo-script-6-min.md. -->
+
+---
+
+# The problem
+
+## [Target user] struggles with [specific recurring task]
+
+- Current approach: [workflow or alternative]
+- Consequence: [measured cost, delay, or risk]
+- Evidence: [observation, interview, or source]
+
+<!-- Timing: 0:25–1:05. Speaker script: demo-script-6-min.md. -->
+
+---
+
+# A complete product journey
+
+## [Input] → [Core action] → [Visible result]
+
+- Start: [prepared scenario and input]
+- Act: [main product interaction]
+- Verify: [result and supporting evidence]
+- Recover: [one failure or boundary case]
+
+<!-- Timing: 1:05–3:05. Speaker script: demo-script-6-min.md. -->
+
+---
+
+# How it works
+
+## [Core mechanism and architectural decision]
+
+- [Insert an Archify diagram backed by project files]
+- Key decision: [choice and tradeoff]
+- Original contribution: [difference from current practice]
+
+<!-- Timing: 3:05–3:45. Speaker script: demo-script-6-min.md. -->
+
+---
+
+# Build quality and Codex
+
+## [Working capability] with [verification evidence]
+
+- Quality: [test or repeatable check and result]
+- Codex: [task → artifact → human verification]
+- Reliability: [failure handling and known limit]
+
+<!-- Timing: 3:45–4:40. Speaker script: demo-script-6-min.md. -->
+
+---
+
+# Value and build direction
+
+## [Beneficiary] gains [observable improvement]
+
+- Before / after: [same task, comparable conditions]
+- Evidence: [metric, units, sample, and method]
+- Build direction: [official name]
+- Alignment: [demonstrated capability]
+
+<!-- Timing: 4:40–5:30. Speaker script: demo-script-6-min.md. -->
+
+---
+
+# What we built
+
+## [Hackathon contribution and demonstrated result]
+
+- Built on-site: [new features and evidence]
+- Existing foundation: [none, or repository links]
+- Next milestone: [one measurable validation step]
+
+<!-- Timing: 5:30–6:00. Speaker script: demo-script-6-min.md. -->
