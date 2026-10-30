@@ -1,24 +1,28 @@
-# Cortex Sentinel — MVP proposal
+# Cortex Sentinel — map-first MVP
 
-Hackathon track: **Autonomous & Adaptive AI**.
+Updated 2026-10-31. This revision replaces the multi-screen wizard with a single monitoring workspace inspired by World Monitor.
 
-This folder preserves the proposed MVP journey and clickable wireframe for ShopeePay risk and fraud analysts. It is a discussion baseline before the formal BRD and PRD, not an approved production specification.
+- [Interactive wireframe](wireframe.html): download or clone, then open in any modern browser. No server, API key, or network connection is required.
+- [Revised MVP flow and scope](MVP-user-flow.md)
+- [World Monitor research and design decisions](World-Monitor-research.md)
 
-- [MVP user flow and scope](MVP-user-flow.md)
-- [Clickable wireframe](wireframe.html) — download or clone the repository and open this file in a browser. GitHub's file view displays source rather than running the prototype.
+![Map-first wireframe preview](wireframe-preview.png)
 
-The wireframe uses synthetic data and scripted results. It has no connection to Shopee systems, payment execution, or the OpenAI API. Its location panel is a map-layout placeholder, and its relationship view is not a trained graph neural network.
+## Try the revised flow
 
-## Suggested walkthrough
+1. Open the wireframe directly into the populated risk map.
+2. Select a saved monitor under **My configurations**. Its cases, scope, map markers, and selected case update together.
+3. Toggle layers, switch between Southeast Asia and World, change the period, drag to pan, or zoom.
+4. Select a marker or case row to inspect evidence in the context panel.
+5. Select **Edit configuration**, adjust fields, **Test changes**, then **Apply configuration** in the same panel.
+6. In Merchant coordination with the 24-hour period selected, open C-105 and save **Legitimate activity** with a reason.
+7. Use **Test & review improvement** in the feedback panel, approve the scripted candidate, then try rollback.
+8. Select Location anomalies and inspect C-202 for incomplete evidence. Try pause/resume and expanding the map.
 
-1. Complete the three configuration steps.
-2. Run the mock replay and activate sandbox monitoring.
-3. Simulate the coordinated merchant ring and open its investigation.
-4. Return to monitoring, select legitimate shared-IP activity, and simulate it.
-5. Record **Legitimate activity** with a reason; evaluate and approve the proposed improvement.
-6. Return to monitoring and replay the legitimate scenario under v2.
-7. Try the enrichment outage, pause/resume, activity log, and policy rollback.
+## Prototype boundaries
 
-Navigation is clickable. Investigation evidence tabs and decision controls are interactive. Replay outputs are illustrative constants, not calculations from a complete transaction dataset. The prototype keeps only one current simulated case; it is not a persistent case-management system. Refresh/browser persistence depends on the standalone viewer's local state support.
+All case records, IPs, activity, evaluation outputs, and geographic activity locations are synthetic. Country boundaries are embedded Natural Earth geometry. The prototype uses no World Monitor application code or live services.
 
-Prepared: 2026-10-31, Asia/Ho_Chi_Minh.
+This is a wireframe, not a deployed investigator: tests are scripted, settings do not run a detection model, activity does not stream, and decisions/settings reset on reload. IP uncertainty rings are illustrative rather than scaled accuracy measurements. Links indicate related evidence, not proven cross-border payment flows. The relationship strip is not a trained GNN.
+
+The flow document remains a proposal preceding formal BRD and PRD sign-off. Git history retains the earlier wizard design.

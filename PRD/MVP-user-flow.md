@@ -1,183 +1,101 @@
-# Cortex Sentinel: proposed MVP scope and user flow
+# Cortex Sentinel — map-first MVP flow
 
-**Date:** 2026-10-31 (Asia/Ho_Chi_Minh)
-**Status:** Proposal for discussion before formal BRD and PRD
-**Track:** Autonomous & Adaptive AI
-**Primary users:** ShopeePay risk and fraud analysts
-**Product coverage:** ShopeePay and ShopeePayLater
+Date: 2026-10-31, Asia/Ho_Chi_Minh
 
-## 1. Intent and existing context
+Status: revised proposal and interactive wireframe; formal BRD and PRD to follow.
 
-An existing engine already ingests data and configures detection use cases. The proposed MVP adds an AI investigation layer and an analyst workspace. It monitors candidate alerts, investigates connected activity, escalates high-risk cases while analysts are away, and uses reasoned analyst feedback to improve future triage.
+## Product intent
 
-The hackathon uses mock transactions, accounts, merchants, devices, IP locations, and analyst decisions. The flagship scenario is coordinated merchant abuse. AML-relevant relationship and money-flow evidence can support investigation, but this is not a complete AML compliance system and does not determine that money laundering has occurred.
+Give ShopeePay risk and fraud analysts one geographic workspace to select their existing monitoring configurations, understand suspicious activity, inspect agent investigations, and record decisions. Cover ShopeePay and ShopeePayLater with synthetic data for the Autonomous & Adaptive AI hackathon track.
 
-The central demonstration is: **the agent discovers a connected ring, assembles an evidence-backed case, escalates it, and avoids repeating an unnecessary escalation after a tested analyst correction.**
+The existing engine continues to own ingestion and detection use cases. The proposed AI layer investigates alerts, assembles evidence, groups cases, and escalates within analyst-defined boundaries. Analyst feedback can produce scoped adjustments that are tested and approved before activation.
 
-## 2. Proposed scope
+## Design correction
 
-### Included
+The earlier six-destination interface and mandatory setup journey were too fragmented. The revised design opens directly on a populated map. Configuration, investigation, and improvement use one contextual side panel; they do not navigate to separate pages.
 
-- Reuse the existing ingestion and use-case configuration engine.
-- Select a synthetic dataset and validate required identifiers and timestamps.
-- Configure evidence checks, graph expansion, investigation budgets, and escalation routing.
-- Run a labeled replay before activating sandbox monitoring.
-- Investigate candidate alerts asynchronously, group related alerts, and create consolidated cases.
-- Inspect observed facts, counter-evidence, unknowns, graph relationships, location context, and investigation history.
-- Capture analyst dispositions and explanations.
-- Retrieve relevant reviewed decisions for subsequent investigations.
-- Propose narrowly scoped policy adjustments; evaluate, approve, version, and roll them back.
-- Surface failures, incomplete investigations, paused work, and escalation delivery status.
+The distinction between a display layer and a detection rule remains explicit: hiding IP rings does not disable IP investigation. Changing a policy requires a test and explicit apply action.
 
-### Excluded
+## One workspace
 
-- Real payment blocking, account freezing, or credit decisions.
-- Regulatory reporting or full AML program coverage.
-- Autonomous activation of learned policy changes.
-- Automatic closure based on low confidence or missing evidence.
-- Production throughput, latency, detection accuracy, or loss-prevention claims.
-- A newly built streaming feature-store platform.
-- A trained GNN unless later justified by suitable labeled data and comparison against a baseline.
-
-Relationship queries and a network visualization are in scope; neither should be described as a trained GNN. The OpenAI API investigation layer is proposed functionality, not connected in the wireframe.
-
-## 3. Full user journey
-
-### Step 1 — Select data and the existing use case
-
-**User action:** Open an existing use case and select the hackathon sandbox dataset.
-
-**System response:** Check transaction ID, event timestamp, product, amount/currency, account, merchant, device, IP, and relationship integrity. Identify optional unavailable evidence.
-
-**Proposed default:** Coordinated merchant abuse, covering both products.
-
-**Completion:** Required data checks pass and the use case is selected. Missing required fields block activation. Missing optional data remains visible as a limitation.
-
-### Step 2 — Configure the investigator
-
-**User action:** Choose evidence checks and graph expansion depth.
-
-**Proposed defaults:** Transaction velocity, shared devices, merchant concentration, reviewed-case retrieval, optional IP-location checks, two-hop expansion, and a maximum of three minutes or twelve tool calls per case. These numbers are design assumptions to validate, not agreed service levels.
-
-**System response:** Save an investigation configuration with explicit limits. Budget exhaustion produces an incomplete case requiring review, never a benign determination.
-
-**Completion:** A saved draft defines the evidence available to the investigator and its operating limits.
-
-### Step 3 — Define autonomy and escalation
-
-**User action:** Set escalation priority, destination, acknowledgment deadline, and backup owner.
-
-**Proposed defaults:** High priority, Risk operations queue, acknowledgment within fifteen minutes, then escalation to Risk lead.
-
-**Allowed automatically:** Enrichment, relationship expansion, alert grouping, case drafting, and routing within the configured policy.
-
-**Approval required:** Activation of learned changes to triage policy.
-
-**Excluded actions:** Freezing accounts, blocking payments, and filing regulatory reports.
-
-**Completion:** Save a versioned draft. The wireframe uses named priority levels; precise scoring and threshold semantics remain a PRD decision.
-
-### Step 4 — Validate with historical replay
-
-**User action:** Run a labeled mock replay against the saved configuration.
-
-**System response:** Show actual fraud escalated, legitimate cases escalated, missed fraud, and failure-routing checks. Keep evaluation cases separate from the historical decisions used for retrieval or adaptation.
-
-**Proposed illustrative gates:** At least 18 of 20 fraud cases escalated, at most 20 of 80 legitimate cases escalated, and incomplete-evidence routing preserved.
-
-**Completion:** Passing gates enables explicit sandbox activation. Failed gates return the analyst to configuration. These acceptance gates demonstrate a workflow; they are not adequate proof of production safety or generalization.
-
-### Step 5 — Activate and monitor
-
-**User action:** Activate sandbox monitoring, inspect exceptions, or pause/resume new investigations.
-
-**System response:** Display the active policy, feed/tool health, processed volume, consolidated cases, escalations, and investigation activity. The existing engine handles transaction detection; the AI layer performs asynchronous investigation.
-
-**Main questions answered:** What needs attention? Is the agent operating correctly? What has it done?
-
-**Failure behavior:** Queue new investigations while paused. Retry transient enrichment failures within a bounded budget. Preserve failed checks and route unresolved cases for review. Record escalation delivery failure separately from successful delivery and acknowledgment. Re-escalate overdue cases to the backup owner.
-
-**Completion:** The analyst can understand unattended work and identify cases requiring intervention.
-
-### Step 6 — Investigate a consolidated case
-
-**User action:** Open a case and inspect evidence, graph, location, and timeline views.
-
-**Evidence:** Separate observed facts, model assessments, counter-evidence, and unknowns. Material claims link to supporting mock transaction or session records.
-
-**Graph:** Show accounts, merchants, devices, IPs, and payment relationships with time-bounded connections. Shared infrastructure is evidence to examine, not proof of guilt. Beneficial ownership and settlement destinations must not be inferred when absent from the dataset.
-
-**Location:** Separate approximate IP geolocation from merchant registered address. Show source, observation time, accuracy radius, and unavailable evidence. Do not imply exact person tracking or infer impossible travel from IP alone.
-
-**Timeline:** Show actions, queried evidence, retries, policy version, routing, and delivery status. This is an operational trace and evidence summary, not private model chain-of-thought.
-
-**Completion:** The analyst has enough evidence to make a disposition or request additional investigation.
-
-### Step 7 — Record the analyst decision
-
-**User action:** Select Confirmed fraud, Legitimate activity, or Insufficient evidence, and supply a reason.
-
-**System response:** Store the disposition, evidence context, reviewer, timestamp, and applicable version. Confirmed/legitimate cases can be resolved; insufficient-evidence cases stay open. Resolution does not authorize a financial action.
-
-**Completion:** A traceable reviewed decision becomes available as context. Analyst decisions are fallible labels and should not be treated as unconditional ground truth.
-
-### Step 8 — Evaluate and approve an improvement
-
-**User action:** Review an agent-proposed scoped adjustment and compare it against the current policy.
-
-**Example:** Reduce the weight of a known public-IP association only where devices are independent, velocity is ordinary, and timing is not coordinated. Preserve escalation for stronger corroborating signals. Avoid a blanket IP allowlist.
-
-**System response:** Evaluate the candidate on held-out labeled cases. Show both false escalations and missed fraud, not analyst agreement alone. Version the candidate, record approval, and provide expiry/review and rollback behavior.
-
-**Completion:** An analyst approves activation or rejects the candidate. Approval is required even when illustrative metrics improve. The MVP demonstrates retrieval and policy adaptation; it does not imply that an API model automatically retrains on feedback.
-
-## 4. Screen structure
-
-| Workspace | Primary content | Main action |
+| Area | Purpose | Interaction |
 | --- | --- | --- |
-| Configure | Data, use case, investigation checks, autonomy limits | Save draft |
-| Validate | Replay cohort, acceptance gates, comparison results | Activate sandbox |
-| Monitor | Prioritized cases, agent activity, health, policy version | Open case / pause |
-| Investigate | Evidence, graph, location, timeline, decision form | Save disposition |
-| Improve | Proposed adjustment, comparison, scope and guardrails | Approve / roll back |
-| Activity log | Configuration, investigation, decision and approval events | Inspect history |
+| Header | Agent status and selected policy | Pause/resume |
+| Map toolbar | Region, period, edit selected configuration | Change view or open inline editor |
+| My configurations | Saved monitors from the existing engine | Select one and update its map and cases |
+| Map | Geographic evidence, risk cases, related locations | Pan, zoom, select markers, toggle layers |
+| Context panel | Selected case, configuration editor, or improvement review | Inspect or act without leaving the map |
+| Cases below map | Accessible list of the selected configuration's cases | Open the same case context as a marker |
+| Agent activity | Recent trace and analyst actions | Inspect investigation history |
+| Feedback panel | Reviewed cases and scoped adaptation | Review, approve, or roll back |
 
-The dashboard prioritizes exceptions rather than making a map the primary navigation. Geography is contextual evidence for the selected case.
+The desktop map stays central. On narrower screens, context moves beneath the map and panels stack. There is no mandatory walkthrough before monitoring.
 
-## 5. Synthetic data and demo scenarios
+## Primary flow: select, inspect, decide
 
-Suggested mock inventory: 10,000 transactions, 500 accounts, 40 merchants, 700 devices, 120 IP records, and 120 historical analyst decisions. These are proposed seed sizes shown in the wireframe, not a generated dataset included with it. Use separate historical-context, held-out evaluation, and live-simulation partitions. Use a single currency (VND) for the first demo to avoid misleading aggregation.
+1. **Open the monitor.** Show a seeded configuration, current cases, geographic evidence, agent status, and policy version immediately. The mock dataset is already connected.
+2. **Select your configuration.** Choose Merchant coordination, Location anomalies, or Shared-device clusters. Map markers, case list, scope, policy version, and selected case update together. Map position and display-layer choices are retained.
+3. **Focus the view.** Set a period, switch between World and Southeast Asia, pan/zoom, or toggle risk cases, relationship links, merchant markers, and IP uncertainty. Cases outside the time filter disappear from both map and list. Hidden markers remain accessible through the case list.
+4. **Select a case.** Click a marker or list entry. The context panel shows observed facts, counter-evidence, missing data, a compact relationship summary, and location provenance/limitations.
+5. **Record a disposition.** Choose Confirmed fraud, Legitimate activity, or Insufficient evidence and enter a reason. Save in place. The case list and feedback count update. A disposition does not trigger payment blocking or account freezing.
 
-### Scenario A — Coordinated merchant ring
+## Configuration flow: edit in context
 
-Six accounts pay two merchants in a short window. Three accounts share a device; the other accounts connect through payments to the same merchants. The agent groups twelve alerts, checks corroborating timing and transaction evidence, and escalates one case. The displayed VND 48,000,000 is observed volume, not confirmed fraud loss or money saved.
+1. Select a saved configuration and click **Edit configuration**.
+2. The context panel becomes an editor containing its name, escalation priority, graph depth, and location mismatch threshold. Defaults are loaded from that configuration.
+3. Click **Test changes** to review the mock replay in the same panel. Invalid names or distance values prevent a test.
+4. Click **Apply configuration** after testing. The selected configuration increments its version, the activity log records the action, and the panel returns to case context.
+5. Further edits after a test invalidate the result and disable Apply until the analyst retests. Closing the editor discards the draft.
 
-### Scenario B — Legitimate shared-IP activity
+These four exposed fields are enough to explore the configuration interaction. Dataset connection, use-case creation, and deeper detection-rule authoring stay in the existing engine. Escalation destinations, investigation budgets, and detailed policy semantics remain requirements to settle in the PRD rather than new mandatory setup pages.
 
-Eight accounts share a public IP but use independent devices and show ordinary payment behavior. The analyst records a reasoned legitimate disposition. A scoped candidate reduces unnecessary escalation without suppressing stronger device or timing signals.
+## Improvement flow: review without navigation
 
-The illustrative replay has 100 labeled cases: 20 fraud and 80 legitimate. Both versions escalate 18 fraud cases and miss 2; false escalations fall from 20 to 12. The 40% reduction is scripted demonstration data, not measured model performance. False-positive rate changes from 20/80 to 12/80; this differs from the fraction of escalated cases that are false.
+1. Review C-105, the legitimate shared-IP example, and record Legitimate activity with a reason.
+2. The feedback panel offers a candidate scoped to merchant M-031, independent devices, and ordinary timing.
+3. **Test & review improvement** replaces the context panel with a scripted baseline/candidate comparison.
+4. The analyst approves explicitly or cancels. Approval changes the illustrative C-105 priority to Low and records the action. Rollback restores Review priority and baseline adaptation state.
 
-### Scenario C — Enrichment outage
+Illustrative comparison: among 20 fraud and 80 legitimate cases, both versions escalate 18 fraud cases and miss 2. False escalations change from 20 to 12. These are scripted values, not evidence of performance. A real implementation must use held-out labeled cases, prevent retrieval leakage, evaluate missed fraud, and retain versioned audit records. The prototype does not fine-tune or call a model.
 
-An IP enrichment check fails and bounded retries are exhausted. The case remains incomplete and available for analyst review. Missing evidence does not turn into a clearance decision.
+## Autonomy and failures
 
-## 6. Wireframe fidelity and limitations
+Allowed automatically in the proposed product: enrich alerts, query relationships, group related activity, assemble evidence, and route configured escalations. Approval required: production policy changes and learned adjustments. Excluded: payment blocking, account freezing, credit decisions, and regulatory submissions.
 
-[Open the wireframe source/download](wireframe.html).
+Pause retains visible cases and represents queuing future work. C-202 demonstrates an enrichment outage: two retries have failed, IP evidence is unavailable, and the displayed geographic point is the merchant's registered city. The case remains incomplete rather than being cleared.
 
-The standalone HTML is a throwaway interaction prototype. It supports configuration navigation, replay and activation, mock scenario selection, pause/resume, evidence tabs, decision capture, a scripted learning comparison, approval, rollback, and an activity log.
+In the implementation, delivery failures, acknowledgment deadlines, backup escalation, investigation budget exhaustion, and unavailable data must remain visible in this workspace. They do not require separate navigation destinations.
 
-It does not implement the full requirements described above. Specifically, it has one current case rather than a persistent queue; no backend ingestion, schema validation, model calls, actual graph computation, real geolocation basemap, notification delivery, acknowledgment workflow, automatic expiry, authentication, or production audit storage. Replay numbers are fixed examples and do not recompute with configuration changes. A fresh policy-edit workflow after activation is described but not implemented. The prototype simulates these concepts to support scope and UX discussion.
+## Geographic and network evidence
 
-## 7. Decisions to settle in the BRD and PRD
+Use actual country geometry and synthetic coordinates for the hackathon. Default to Southeast Asia, where the relevant demo cases are located, while allowing a world overview.
 
-- Hackathon duration, team capacity, and existing engine integration contract.
-- Exact risk-priority definition and policy activation authority.
-- Final data schema, entity resolution, investigation windows, and mock labeling method.
-- Investigation latency, cost, retry, and work-queue limits.
-- Definition of case resolution, escalation acknowledgment, and reopening.
-- Adaptation mechanism, minimum evidence, evaluation gates, drift checks, and expiry.
-- Whether a trained GNN adds demonstrable value beyond graph queries.
+- Country outlines: Natural Earth public-domain geometry, embedded for offline rendering.
+- Case point: synthetic observed/associated location, with a merchant-city fallback when IP enrichment is unavailable.
+- Merchant marker: synthetic related merchant location.
+- Dashed link: related activity, not proof of a money transfer or a fraud ring.
+- Dashed uncertainty area: illustrative IP uncertainty, not a precise device position or a scaled accuracy guarantee.
+- Relationship summary: mock account/device/merchant associations, not a trained GNN.
 
-The approved flow will feed the BRD's business outcomes and scope, and the PRD's detailed requirements, states, data contracts, acceptance criteria, and measurement plan.
+Observed facts and analyst/model assessments remain separate. Shared devices and IPs alone do not establish fraud. No settlement or beneficial ownership relationship is inferred from missing fields.
+
+## Mock scope and measurable outcomes
+
+The wireframe contains three saved configurations and six mock cases. The map, table, editor, decisions, learning review, and local activity log are interactive. Configuration values and decisions are kept only in memory and reset on reload.
+
+For the eventual MVP, demonstrate three outcomes: a coordinated merchant case escalated with evidence; a legitimate public-network case corrected through reviewed feedback; and incomplete enrichment handled without silently clearing a case. Measure false escalations alongside missed fraud and investigation effort. Do not present transaction volume as prevented losses.
+
+## Not implemented by this wireframe
+
+No real ingestion, streaming, authentication, OpenAI calls, persistent backend, actual replay evaluator, graph inference, geolocation service, notification delivery, or regulatory action. Rule edits do not recompute risk from transactions. The map uses a simple equirectangular projection and does not implement production marker clustering. Baseline and learned-policy versions need a unified lifecycle in the real product.
+
+## Remaining BRD / PRD decisions
+
+- Existing-engine integration and full synthetic schema.
+- Team capacity and hackathon time budget.
+- Meaning of risk levels, escalation ownership, acknowledgment, and routing.
+- Role permissions, evidence provenance, retention, and case resolution/reopening.
+- True evaluation gates, minimum labeled evidence, adaptation expiry, and rollback semantics.
+- Whether trained GNN scoring adds value beyond relationship queries.
+
+See [research and design rationale](World-Monitor-research.md) and [wireframe](wireframe.html).
