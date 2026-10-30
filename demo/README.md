@@ -17,4 +17,4 @@ Editable templates for a six-minute English product demo.
 5. Generate the architecture diagram with Archify after implementation evidence exists.
 6. Keep the Markdown deck, Google Slides and script aligned; rehearse to six minutes including clicks and pauses.
 
-This is a template kit, not a claim that a product exists or passes tests. Preserve missing fields until evidence is available. The repository remains private. Nothing has been committed or pushed.
+This is a template kit, not a claim that a product exists or passes tests. Preserve missing fields until evidence is available. The repository remains private.
