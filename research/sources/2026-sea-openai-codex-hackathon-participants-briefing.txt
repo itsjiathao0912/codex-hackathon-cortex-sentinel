@@ -1,0 +1,185 @@
+31 October 2026
+Participant Brief Deck
+
+Tooling Setup
+Wifi Access
+Codex Credits (USD 100) and API Credits (USD 100)
+Each team member will be given USD 100 in OpenAI API credits and Codex credits for hackathon usage. Look out for a setup email from OpenAI 1 day prior to the event with instructions to activate your credits before the hackathon.
+
+Note:
+Link/coupon code is unique to you and can only be redeemed once. Do not share it.
+Please install the Codex app prior to the event.
+Access and credits are provided for participants attending the full hackathon on 31 October, and may be revoked if a participant or team is no longer attending or leaving early.
+Guest Wi-Fi will be provided at the venue. Wi-Fi login instructions will be shared on the event day.
+
+Agenda
+8:30 AM
+Doors Open & Registration
+9:20 AM
+Opening
+10:00 AM
+Hacking Starts
+12:30 PM
+Working Lunch
+2:30 PM
+Tea Break & Work-in-Progress submission
+5:00 PM
+Code Submission Deadline
+5:00 PM - 7:15 PM
+Dinner + First Round Judging
+7:15 PM
+Final Round (Top 5)
+8:30 PM
+Prize Presentations
+9:00 PM
+End of Event
+
+Hackathon Rules
+All work must be done on-site.
+You may either:
+01
+Start from
+scratch
+02
+Build on an existing
+personal or
+open-source project
+Building on existing project
+Allowed only if:
+New extensions are significant and substantial. Only work built during the hackathon will be judged.
+
+
+Built in a new public repository.
+Link to the existing repository / repositories must be provided in your README and submission form.
+State clearly what was built during the hackathon in your README and submission form.
+Any infringement of these rules may result in disqualification.
+
+Build Directions
+01
+Autonomous &
+Adaptive AI
+Agents that operate reliably without constant human oversight
+What we're looking for
+Is this an agent you can trust to run autonomously - and does it get better the more it runs?
+02
+AI-Native Products
+& Operations
+Products, services, and operations fundamentally redesigned with AI - or something that simply couldn't exist before
+What we're looking for
+What can users or businesses now do that wasn't realistically possible before?
+03
+Deep Domain AI
+AI that reflects how expert work is actually done - not a simplified version
+What we're looking for
+Would a domain expert trust this to do their job?
+Please note that the hackathon idea and build directions on d-day should align with the ones in your initial registration.
+
+Judging Criteria
+01
+Problem & Solution Fit
+Is the problem real?
+Is the solution the right answer to it?
+02
+Build Quality
+Does it work and hold up under use?
+We judge the product - not the pitch.
+03
+Insight & Originality
+Is the approach genuinely novel, or just common industry practice?
+04
+Real-World Value
+Based on the working demo - who benefits, and how significantly?
+05
+Alignment with Build Direction
+Does the build meaningfully reflect at least one build direction?
+06
+Use of Codex
+How deeply was Codex leveraged to build this product?
+
+Presentation Format
+APPLIES TO BOTH ROUNDS
+6 min  Demo / Pitch
+2 min  Q&A
+Cover your problem, solution, and use of Codex. Judges will score against the criteria shared - grounded in what you built and can demonstrate.
+
+Round One Judges
+Nguyen Thanh De
+Shopee Vietnam
+Van Xuan Ty
+Doan Ngoc Bao
+Nguyen Van Thai
+Tran Hoang Viet
+Le Quoc Khanh
+Shopee Vietnam
+Nguyen Minh Son
+Tran Trung Kien
+Le Thanh Son
+An Nguyen
+Shopee Vietnam
+Shopee Vietnam
+Shopee Vietnam
+Shopee Vietnam
+Garena Vietnam
+Garena Vietnam
+Codex Ambassador
+Codex Ambassador
+
+Final Round Judges
+Sidharth Sharma
+APAC GTM Director
+OpenAI
+Lee Chon Cheng
+Director of COO Office
+Sea Limited
+Kyle Tran
+Head of Product
+Shopee VN
+
+What to Submit
+01
+GitHub Repo
+New public repository created for this hackathon
+02
+Project Write Up (PDF)
+Written summary of the problem, solution, build direction it aligns with, and how Codex was utilised.
+03
+Demo Link
+Live demo or prototype link
+04
+Declarations
+State any existing OSS / personal project used, and what was built exclusively within this hackathon.
+Each team to make one mid-time submission by 3:30 PM and one final submission by 5:00 PM via Google Form. Late submissions will be disqualified.
+
+Prizes
+
+Notes
+01
+Outfit
+Please wear polite outfits.
+No shorts, no flip flops.
+02
+Arriving at the building
+Please refer to this instruction on parking lot and how to access the building.
+03
+Attendance
+All team members must be present physically for the full day. Partial attendance or teams with fewer than 3 members will result in disqualification.
+04
+Check-in time
+Check-in opens from 8:30am to 9:15am. Teams that have not fully checked in by then will be disqualified.
+05
+What to bring
+Each member must bring their ID Card (or passport and valid visa for expats), as well as their own laptop and charger.
+
+Share the Moment
+Tag us at Sea and OpenAI on LinkedIn! 
+🛠
+What will you build?
+Share a sneak peek of the problem you'll solve.
+Who's on your team?
+Tag your teammates. Shout them out.
+Why does this matter?
+Real-world impact of what you'll solve.
+🔥
+👥
+
+See you there!

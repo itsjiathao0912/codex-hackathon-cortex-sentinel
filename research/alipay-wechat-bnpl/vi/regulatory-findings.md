@@ -1,0 +1,52 @@
+# Bối cảnh chống rửa tiền tại Trung Quốc đại lục phục vụ nghiên cứu Huabei và Fenfu
+
+[Bản tiếng Anh](../regulatory-findings.md)
+
+Ngày nghiên cứu: 2026-10-31. Phạm vi: các quy định công khai và bối cảnh xử lý vi phạm trong quá khứ đối với các tổ chức cho vay/thanh toán tại Trung Quốc đại lục. Những nguồn này xác lập nghĩa vụ và các sự kiện lịch sử, **không phải bằng chứng cho thấy một biện pháp kiểm soát cụ thể của Huabei/Fenfu đã được triển khai, có hiệu quả hoặc được áp dụng giống nhau giữa các pháp nhân**. Đây là thông tin nền cho nghiên cứu, không phải ý kiến đánh giá tuân thủ pháp luật toàn diện.
+
+## Danh mục bằng chứng đã xác minh
+
+| ID | Nguồn / ngày | Phát hiện được nguồn chứng minh và phạm vi | Mức độ tin cậy của bằng chứng |
+|---|---|---|---|
+| R1 | [Luật Chống rửa tiền của CHND Trung Hoa, bản sửa đổi năm 2024](http://lawdb.cncourt.org/show.php?fid=157968), thông qua ngày 2024-11-08; có hiệu lực từ 2025-01-01 | Văn bản luật quốc gia được đăng lại trong cơ sở dữ liệu pháp luật China Court, tại đó ghi nguồn là Tân Hoa Xã. Điều 6/63 quy định phạm vi các tổ chức tài chính, bao gồm tổ chức thanh toán phi ngân hàng. Điều 28–30 quy định việc xác minh danh tính và thẩm định liên tục dựa trên rủi ro. Điều 34–35 quy định việc lưu giữ hồ sơ và báo cáo. Điều 40–41 quy định các biện pháp phòng ngừa đặc biệt dựa trên danh sách. | Cao đối với văn bản pháp luật được đăng lại; không phải kiểm toán việc triển khai |
+| R2 | [Quy định về thẩm định khách hàng và lưu giữ thông tin nhận dạng khách hàng/hồ sơ giao dịch](https://www.moj.gov.cn/pub/sfbgw/flfggz/flfggzbmgz/202512/t20251224_529734.html), bản đăng lại chính thức của Bộ Tư pháp; có hiệu lực từ 2026-01-01 theo Điều 52 | Áp dụng cho công ty tài chính tiêu dùng và tổ chức thanh toán phi ngân hàng (Điều 2); đơn vị cho vay nhỏ trực tuyến chịu sự điều chỉnh của các điều khoản có liên quan (Điều 47). Quy định cụ thể về tiếp nhận khách hàng, thẩm định trong dịch vụ chấp nhận thanh toán cho đơn vị kinh doanh, rà soát liên tục, thẩm định tăng cường, hồ sơ và bảo mật. | Cao đối với văn bản quy định chính thức |
+| R3 | [Quyết định của Ngân hàng Nhân dân Trung Quốc (PBOC) sửa đổi/bãi bỏ các quy định](https://www.moj.gov.cn/pub/sfbgw/flfggz/flfggzbmgz/202512/t20251230_529967.html), trang ghi ngày công bố là 2025-09-30; có hiệu lực từ 2025-12-01 | Các sửa đổi đối với quy định báo cáo và giám sát nêu rõ phạm vi áp dụng gồm tổ chức thanh toán phi ngân hàng/tài chính tiêu dùng và đơn vị cho vay nhỏ trực tuyến có liên quan; yêu cầu con người phân tích cảnh báo từ hệ thống giám sát giao dịch, lập hồ sơ quyết định xử lý, giám sát lấy khách hàng làm trung tâm và cơ chế quản trị có trách nhiệm giải trình. | Cao đối với văn bản sửa đổi chính thức; ngày trong URL khác ngày công bố hiển thị trên trang |
+| R4 | [Thông báo của các cơ quan quản lý tài chính về việc khắc phục sai phạm của các nền tảng](https://www.csrc.gov.cn/csrc/c100028/c7418599/content.shtml), Ủy ban Điều tiết Chứng khoán Trung Quốc (CSRC), 2023-07-07 | Ant Group và các công ty con chịu tổng số tiền phạt/tịch thu là 7,123 tỷ nhân dân tệ (RMB), liên quan đến nhiều nhóm vi phạm trong quá khứ, bao gồm nghĩa vụ chống rửa tiền. Thông báo cũng nêu Tenpay trong số các pháp nhân khác bị xử phạt. | Cao đối với tuyên bố lịch sử của cơ quan quản lý; không riêng cho Huabei/Fenfu |
+| R5 | [Thông báo tự nguyện của Tencent](https://static.www.tencent.com/uploads/2023/08/17/f195adb5f3a9ee6cbe997bc28555ae1e.pdf), văn bản ký ngày 2023-07-07 | Tencent công bố Tenpay bị phạt khoảng 2,99 tỷ RMB do các vi phạm trước đây trong dịch vụ thanh toán tại Trung Quốc đại lục; cho biết PBOC đã thanh tra vào năm 2021 và Tenpay đã hoàn tất tự kiểm tra cùng các biện pháp khắc phục tương ứng. | Công bố từ chính tổ chức phát hành; hiệu quả khắc phục vẫn là tuyên bố của công ty |
+
+## Những yêu cầu của khung pháp lý, không mặc định rằng đã được triển khai
+
+**R1: nghĩa vụ và quyền dựa trên rủi ro.** Luật yêu cầu thẩm định khách hàng (CDD) và giám sát liên tục, không chỉ xác minh danh tính một lần. Các mối quan hệ có rủi ro cao hơn có thể cần thông tin về nguồn tiền/mục đích sử dụng tiền. Hồ sơ nhận dạng có liên quan phải được lưu giữ ít nhất mười năm sau khi chấm dứt quan hệ khách hàng; thông tin giao dịch phải được lưu giữ ít nhất mười năm sau khi giao dịch hoàn tất. Báo cáo giao dịch đáng ngờ (STR) phải được bảo mật. Các tổ chức phải thu thập các danh sách chính thức có liên quan và đối chiếu khách hàng/đối tác giao dịch. Các biện pháp phải tương xứng; khách hàng có quyền khiếu nại quyết định quản lý rủi ro. Việc dựa vào CDD của bên thứ ba không loại bỏ trách nhiệm pháp lý của tổ chức. Đây là các nghĩa vụ theo luật định về chống rửa tiền (AML), không phải bằng chứng cho thấy một trong hai sản phẩm mua trước trả sau (BNPL) sử dụng mô hình hay nhà cung cấp dịch vụ sàng lọc cụ thể nào. [R1]
+
+**R2: tiếp nhận khách hàng, đơn vị kinh doanh, cập nhật thẩm định và dữ liệu.** Điều 16–19 phân biệt việc thẩm định tài khoản thanh toán/khách hàng, thẩm định trong dịch vụ chấp nhận thanh toán cho đơn vị kinh doanh và việc thiết lập quan hệ tài chính tiêu dùng. Điều 25–30 yêu cầu phân loại rủi ro, rà soát liên tục và xác minh bổ sung khi hành vi không phù hợp với những thông tin đã biết về khách hàng. Các trường hợp có rủi ro cao hơn có thể cần thông tin bổ sung, giám sát tăng cường và phê duyệt của cấp quản lý cao. Điều 28 quy định rằng các hạn chế nhằm kiểm soát rủi ro không được biến thành việc phong tỏa tài sản trái pháp luật. Điều 43–44 yêu cầu hồ sơ phải được lưu giữ an toàn, bảo mật, cho phép tái dựng giao dịch và được lưu ít nhất mười năm; phải lưu lâu hơn trong trường hợp có cuộc điều tra AML đang diễn ra, nếu thuộc diện áp dụng. Điều 51 quy định thời gian chuyển tiếp cho khách hàng hiện hữu, nên chỉ riêng ngày có hiệu lực pháp lý không phải bằng chứng rằng mọi tài khoản cũ đều được cập nhật thẩm định ngay lập tức. [R2]
+
+**R3: cảnh báo không đồng nghĩa với báo cáo giao dịch đáng ngờ đã được gửi.** Quy định báo cáo sửa đổi yêu cầu **con người phân tích và nhận diện** các giao dịch được lựa chọn theo tiêu chí giám sát. Cả quyết định báo cáo lẫn quyết định không báo cáo đều phải có lý do được ghi nhận trong hồ sơ; CDD bổ sung có thể cung cấp căn cứ cho quyết định xử lý và thay đổi mức xếp hạng rủi ro. Việc giám sát phải lấy khách hàng làm trung tâm và bao quát khách hàng cùng các mảng kinh doanh. Cơ chế quản trị bao gồm nhân sự chịu trách nhiệm, kiểm soát nội bộ, đào tạo, kiểm toán và các hệ thống cần thiết. Hồ sơ báo cáo và phân tích có liên quan phải được lưu giữ ít nhất mười năm. Điều này củng cố sự phân biệt giữa phát hiện tự động và quyết định xử lý AML đã qua rà soát; không tiết lộ ngưỡng nội bộ, nhân sự, hệ thống quản lý vụ việc hay số lượng báo cáo đã gửi của bất kỳ nhà cung cấp nào. [R3]
+
+## Diễn giải về vận hành phục vụ nghiên cứu này
+
+Nội dung dưới đây là tổng hợp từ các quy định, **không phải bản tái dựng kiến trúc hệ thống của nhà cung cấp**:
+
+1. Xác định pháp nhân nào mở tài khoản, cung cấp dịch vụ thanh toán/chấp nhận thanh toán và cho vay tiền.
+2. Xác minh danh tính và, đối với khách hàng tổ chức thuộc diện áp dụng, cơ cấu sở hữu/quyền kiểm soát; tìm hiểu hoạt động dự kiến.
+3. Phân loại rủi ro và đối chiếu các danh sách chính thức có liên quan.
+4. Giám sát hoạt động của khách hàng/đơn vị kinh doanh và cập nhật thẩm định khi bằng chứng thay đổi.
+5. Rà soát cảnh báo, thu thập thông tin bối cảnh, ghi nhận lý do loại trừ một trường hợp hoặc lập báo cáo về trường hợp đó.
+6. Gửi các báo cáo bắt buộc thông qua tổ chức chịu trách nhiệm thực hiện nghĩa vụ; áp dụng riêng các biện pháp kiểm soát rủi ro hợp pháp và tương xứng.
+7. Lưu giữ an toàn hồ sơ có thể kiểm toán, đồng thời hỗ trợ rà soát, giải quyết khiếu nại và điều tra của cơ quan quản lý.
+
+**Những phân biệt quan trọng:** Từ chối cấp tín dụng không phải là kết luận AML. Báo cáo giao dịch đáng ngờ không phải là bản án hình sự kết tội. Việc tự động chặn giao dịch do nghi gian lận không nhất thiết là phong tỏa tài sản theo pháp luật do cơ quan quản lý yêu cầu. Khoản vay tiền mặt được cho phép hoặc tính năng chuyển tiền được cho phép không mặc nhiên là hành vi rút tiền mặt gian dối hay rửa tiền. Hành vi được sản phẩm cho phép, lạm dụng giao dịch mua bán giả tạo, tiền thu được từ tội phạm và khó khăn trả nợ thông thường đòi hỏi bằng chứng và cách xử lý khác nhau.
+
+## Việc xử lý vi phạm chứng minh được và không chứng minh được điều gì
+
+Thông báo năm 2023 về Ant xác lập các thiếu sót trong quá khứ ở nhiều nhóm hoạt động kinh doanh/kiểm soát; tổng số tiền 7,123 tỷ RMB **không phải khoản phạt chỉ liên quan đến AML** và không thể quy cho Huabei. Thông báo nêu rằng phần lớn các vấn đề nổi cộm trong hoạt động tài chính của các nền tảng đã được khắc phục và công tác giám sát đang chuyển sang quản lý thường xuyên. Điều này không chứng nhận mọi biện pháp kiểm soát hiện tại của từng sản phẩm. [R4]
+
+Văn bản công bố của Tencent xác nhận khoản phạt đối với Tenpay và tuyên bố của ban lãnh đạo về việc khắc phục, nhưng bản thân văn bản không liệt kê chi tiết toàn bộ thiếu sót về AML. Thông báo chi tiết trước đây của PBOC được dẫn chiếu không truy xuất được, trả về lỗi `page_not_found`; không được trình bày các phát hiện cụ thể trong thông báo đó như thể đã được xác minh trực tiếp trong nghiên cứu này. Cũng không nên coi khoản phạt đối với công ty thanh toán là khoản phạt đối với sản phẩm Fenfu. [R5]
+
+## Truy xuất nguồn và giới hạn
+
+- Đã đọc toàn văn năm tài liệu có nội dung thực chất: R1–R5; tất cả bằng tiếng Trung, trừ R5 bằng tiếng Anh.
+- Trang luật của Cơ quan Quản lý Giám sát Tài chính Quốc gia Trung Quốc (NFRA) trả về một mẫu trang JavaScript thay vì nội dung thực chất; do đó văn bản luật được xác minh qua R1.
+- Không truy xuất được thông báo trước đây của PBOC về Tenpay được liên kết trong R5. Không có nhận định nào dựa vào các chi tiết chưa được xem trong thông báo đó.
+- Đoạn trích trong kết quả tìm kiếm chỉ được dùng để tìm nguồn. Nội dung tìm kiếm bao gồm tình trạng pháp lý/ngày có hiệu lực, quy định CDD/báo cáo và việc xử lý vi phạm trong quá khứ đối với Ant/Tenpay.
+- Không khẳng định đã tìm kiếm toàn diện mọi sửa đổi sau đó, hợp đồng sản phẩm hay quan hệ giữa các pháp nhân. Các điều khoản riêng của nhà cung cấp phải xác lập pháp nhân và mục đích sử dụng được phép đối với đúng sản phẩm/phiên bản đang được thảo luận.
+- Các nguồn này không xác lập ngưỡng phát hiện chưa công khai, số lượng báo cáo, trọng số của các biến đầu vào hay số liệu thống kê về hiệu quả hiện tại.
