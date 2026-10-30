@@ -1,3 +1,5 @@
+> Current specification: [English PRD](PRD.md) and [architecture rationale](Architecture-rationale.md). This earlier design is supporting context; PRD state machines, budgets and acceptance criteria take precedence.
+
 # Thiết kế triển khai — map TP.HCM và AI triage
 
 31/10/2026. Đề xuất kỹ thuật, không phải mô tả backend đã chạy.

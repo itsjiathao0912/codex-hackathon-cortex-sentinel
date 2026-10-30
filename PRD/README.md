@@ -30,3 +30,11 @@ Thử C-105 để xem vòng phản hồi: đánh dấu Hoạt động hợp lệ
 ## Giới hạn
 
 Các điểm hoạt động, hồ sơ và kết quả kiểm tra đều giả lập. Không gọi OpenAI, không có mô hình GNN, không có thực thi thanh toán. Bản nháp được giữ khi chuyển mục trong phiên; tải lại trang sẽ reset. Bản đồ mở ở khu vực trung tâm TP.HCM, không phải bản đồ phân định toàn bộ ranh giới hành chính thành phố. Các điểm không thể hiện vị trí chính xác của người dùng.
+
+## MVP requirements (English)
+
+- [Business Requirements Document](BRD.md)
+- [Product Requirements Document](PRD.md)
+- [Architecture decisions and justification](Architecture-rationale.md)
+
+These specify target MVP behavior; the current wireframe is not a completed AI backend.

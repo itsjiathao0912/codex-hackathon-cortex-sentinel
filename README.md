@@ -85,3 +85,11 @@ python3 -m http.server 8000
 ```
 
 Mở `http://localhost:8000/wireframe.html`. Bản đồ nền cần mạng; dùng HTTP để trình duyệt gửi Referer phù hợp tới tile provider. Không tải hàng loạt tile hoặc dùng public tile server như dịch vụ có SLA. Backend triage trong diagram chưa được xây dựng.
+
+## MVP requirements (English)
+
+- [Business Requirements Document](PRD/BRD.md)
+- [Product Requirements Document](PRD/PRD.md)
+- [Architecture decisions and justification](PRD/Architecture-rationale.md)
+
+These specify target MVP behavior; the current wireframe is not a completed AI backend.
