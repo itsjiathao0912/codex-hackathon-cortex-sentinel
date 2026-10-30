@@ -4,6 +4,9 @@ Cập nhật 31/10/2026. Wireframe tập trung vào TP.HCM, bản đồ đườn
 
 - [Wireframe tương tác](wireframe.html)
 - [Luồng MVP hiện tại](MVP-user-flow.md)
+- [Đánh giá tính khả thi](Solution-feasibility-report.md)
+- [Thiết kế implementation map và AI triage](Implementation-design.md)
+- [Diagram UI/UX, AI triage và use case](../README.md)
 - [Kết quả kiểm tra ba vòng](Verification-review.md)
 - [Nghiên cứu World Monitor trước đây](World-Monitor-research.md) — tham khảo lịch sử, không còn là bố cục hiện tại.
 
@@ -11,7 +14,7 @@ Cập nhật 31/10/2026. Wireframe tập trung vào TP.HCM, bản đồ đườn
 
 ## Mở demo
 
-Clone/download thư mục PRD, giữ nguyên thư mục `assets`, rồi mở `wireframe.html` bằng trình duyệt hiện đại. Hoặc chạy `python3 -m http.server 8000` trong PRD và mở `http://localhost:8000/wireframe.html`.
+Clone/download thư mục PRD, giữ nguyên thư mục `assets`, rồi chạy `python3 -m http.server 8000` trong PRD và mở `http://localhost:8000/wireframe.html`.
 
 Leaflet 1.9.4 được lưu trong `assets` với giấy phép BSD-2-Clause. Bản đồ nền OpenStreetMap cần Internet; attribution hiển thị trực tiếp. Không tải trước hoặc đóng gói dữ liệu tile. Khi tile lỗi, giao diện hiển thị thông báo và nút thử lại; trang Hồ sơ vẫn hoạt động.
 
