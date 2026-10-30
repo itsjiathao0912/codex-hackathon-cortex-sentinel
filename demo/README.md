@@ -4,6 +4,7 @@ Editable templates for a six-minute English product demo.
 
 - [Markdown deck](demo-deck.md): seven slides with Marp-compatible separators.
 - [Timed script](demo-script-6-min.md): narration, live actions and fallback.
+- [Technical judging evidence](judges-evidence-template.md): latency decisions, privacy inventory, and pilot plan.
 - [Program checklist](requirements-checklist.md): all six criteria and screenshot rules.
 - [Archify brief](diagrams/archify-brief.md): installed skill and evidence-based diagram prompt.
 - [Google Slides deck](https://docs.google.com/presentation/d/1FmA5LqvOVuishkxnNUVoTIy3vQf4bLSgBjuEpu2zBXQ/edit): editable seven-slide deck with English speaker notes.

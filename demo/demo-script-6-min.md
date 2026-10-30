@@ -22,7 +22,7 @@ Consider [SPECIFIC USER] trying to [JOB] during [REAL SITUATION]. Today, they re
 
 ## 3. A complete product journey · 1:05–3:05
 
-Here is [USER ROLE] in [STARTING SCREEN]. This scenario uses [DEMO DATA], and our starting condition is [BASELINE]. First, I [ACTION ONE]. You can see [VISIBLE RESPONSE]. The important detail is [DETAIL], because it gives the user [BENEFIT].
+Here is [USER ROLE] in [STARTING SCREEN]. This scenario uses [SYNTHETIC OR APPROPRIATELY ANONYMIZED DEMO DATA], and our starting condition is [BASELINE]. First, I [ACTION ONE]. You can see [VISIBLE RESPONSE]. The important detail is [DETAIL], because it gives the user [BENEFIT].
 
 Next, I [ACTION TWO]. The product now [ACTUAL BEHAVIOR]. While it runs, notice [STATUS OR EXPLANATION]. This step uses [IMPLEMENTED COMPONENT], and [HUMAN DECISION OR AUTOMATIC STEP] controls what happens next. I will open [RESULT VIEW] so you can inspect the outcome.
 
@@ -34,13 +34,13 @@ Finally, I will try [BOUNDARY INPUT]. The expected behavior is [SAFE RESPONSE]. 
 
 ## 4. How it works · 3:05–3:45
 
-This diagram follows the same journey you just saw. [ENTRY COMPONENT] receives [INPUT]. [CORE COMPONENT] performs [TRANSFORMATION], and [OUTPUT COMPONENT] exposes [RESULT]. We chose [DESIGN DECISION] because [REASON], accepting [TRADEOFF]. The original contribution is [SPECIFIC DIFFERENCE] compared with [EXISTING APPROACH]. Its practical effect is [OBSERVABLE BENEFIT]. The boundary at [POINT] handles [FAILURE OR PERMISSION]. Only implemented components belong in this diagram. Our current limitation is [LIMITATION], and the next technical test is [TEST].
+The original contribution is [MECHANISM], compared with [BASELINE]. This diagram traces [INPUT] through [PROCESSING] to [RESULT]. We compared [CONFIGURATION A] and [B] on the same cases: [TIMINGS] with [QUALITY RESULTS]. We chose [OPTION], accepting [DOWNSIDE]. For privacy, [FIELDS] leave the app, [DATA] persists for [RETENTION], and [ACCESS CONTROL] limits access. Deletion is [IMPLEMENTED BEHAVIOR OR UNIMPLEMENTED LIMIT]. The boundary at [POINT] enforces [CONTROL]. [PLANNED CONTROL] remains future work.
 
 ## 5. Build quality and Codex · 3:45–4:40
 
-For build quality, we checked [IMPORTANT BEHAVIOR] using [TEST OR REPRODUCIBLE PROCEDURE]. The result was [ACTUAL RESULT], under [CONDITIONS]. We also checked [FAILURE CASE], which produces [OBSERVED RESPONSE]. The current limit is [LIMIT], so we are careful to describe this as [PROTOTYPE OR VERIFIED SCOPE].
+Our [NUMBER] evaluation cases produced [PASS COUNT] passes, including [CRITICAL CASE RESULT]. End-to-end latency was [OBSERVED RANGE] under [CONDITIONS]. When [TIMEOUT OR API ERROR] occurs, the app [RECOVERY BEHAVIOR], without reporting false success. These are prototype observations, not production reliability claims.
 
-Codex contributed directly to [SPECIFIC IMPLEMENTATION TASK]. You can trace that work to [FILE, COMMIT, OR SESSION ARTIFACT]. A useful example is [CONCRETE ITERATION]: our initial approach had [ISSUE], Codex helped us [CHANGE], and we verified it through [CHECK]. Our team made [DESIGN OR REVIEW DECISION]. This shows both the depth of Codex's contribution and how we validated the resulting product.
+Codex helped implement [TASK]. In one iteration, [TEST] exposed [FAILURE]. Codex changed [FILE OR COMPONENT], we reviewed [DECISION], and the rerun showed [RESULT]. The commit and test log are [ARTIFACT LINKS]. We verified [PRIVACY CONTROL] with [CHECK]; [REMAINING LIMIT] is still unresolved.
 
 ## 6. Value and build direction · 4:40–5:30
 
@@ -50,7 +50,7 @@ This aligns with [OFFICIAL BUILD DIRECTION] because [SPECIFIC CAPABILITY] enable
 
 ## 7. What we built · 5:30–6:00
 
-During the hackathon, we built [NEW CONTRIBUTION]. Our starting point was [FROM SCRATCH OR EXISTING FOUNDATION], and the original repository links and changes are documented in [README AND SUBMISSION]. Today we demonstrated [WORKING OUTCOME] for [USER]. Our next milestone is [MEASURABLE NEXT STEP]. Cortex Sentinel helps [USER] achieve [CORE VALUE]. Thank you. We are ready for your questions.
+We built [NEW SCOPE] on-site, with [FOUNDATION AND ATTRIBUTION] documented. Next is a [DURATION] pilot with [USERS]. Success means [MEASURED OUTCOME] while meeting [QUALITY AND PRIVACY GATE]. Estimated cost is [COST PER TASK AND ASSUMPTIONS]. Our biggest risk is [RISK]; we will test it through [NEXT EXPERIMENT]. Thank you.
 
 ## Failure fallback
 
@@ -66,3 +66,12 @@ If time runs short, omit the optional boundary-case interaction and state its ve
 - Replace placeholders in both formats and speaker notes.
 - Rehearse twice with slide transitions and clicks included.
 - Record actual segment times and shorten text before increasing speaking speed.
+
+## Deeper judging questions (outside the six-minute script)
+
+Use `judges-evidence-template.md` for the measured latency comparison, privacy inventory, and pilot plan. Keep each answer to a decision, evidence, downside, and remaining risk. Do not read this section during the timed presentation.
+
+- Latency: Where does time go? What quality or cost did the faster configuration sacrifice? What happens on timeout?
+- Privacy: Which fields reach external services and logs? Who can access them? What deletion has actually been verified?
+- Beyond the event: Who will try it next? What outcome would justify continuing? What dependency, cost, or risk could prevent that?
+- Rehearsal: Slides 4, 5 and 7 retain their 40-, 55- and 30-second allocations. Shorten filled-in answers if needed; total remains six minutes.

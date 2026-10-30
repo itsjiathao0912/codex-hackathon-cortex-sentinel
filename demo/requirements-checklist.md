@@ -1,6 +1,6 @@
 # Program requirements and evidence checklist
 
-Source: the two user-provided images titled “Judging Criteria” and “Hackathon Rules”. These are reference requirements, not instructions to change repository access. No official build-direction list was supplied.
+Source: the two user-provided images titled “Judging Criteria” and “Hackathon Rules”. These are reference requirements, not instructions to change repository access. Official build directions were subsequently researched in `research/seven-hour-hackathon-playbook.md`.
 
 | Judging criterion | Deck coverage | Evidence to prepare |
 |---|---|---|
@@ -37,3 +37,15 @@ On-site status, project origin, official build direction, submission deadline an
 - Codex contribution: [task, artifact, review]
 - Remaining limitations: [specific limits]
 - Submission repository: [URL and required visibility]
+
+## Deeper technical review preparation
+
+Source: user-provided account describing two judging rounds and scrutiny of latency, data privacy and future development. The account's original URL and applicability to this event are unconfirmed. These are preparation topics, not newly verified official scoring rules.
+
+| Topic | Deck/script | Evidence |
+|---|---|---|
+| Latency trade-offs | 4–5 | Same-input configuration comparison; quality and cost; timings; timeout behavior |
+| Data privacy | 3–5 | Synthetic/anonymized demo inputs; data-flow inventory; storage, logs, access, retention and deletion checks |
+| Beyond the hackathon | 7 | Named pilot users, outcome threshold, cost assumptions, biggest risk and next experiment |
+
+Complete `judges-evidence-template.md` before rehearsal. Mark each claim implemented-and-tested, implemented-but-unverified, planned, or unknown. Do not present planned protections as current behavior.

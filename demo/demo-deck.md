@@ -43,11 +43,11 @@ size: 16:9
 
 # How it works
 
-## [Core mechanism and architectural decision]
+## [Original mechanism and architectural decision]
 
 - [Insert an Archify diagram backed by project files]
-- Key decision: [choice and tradeoff]
-- Original contribution: [difference from current practice]
+- Latency trade-off: [options, timings, quality]
+- Privacy: [data sent, stored, access, deletion]
 
 <!-- Timing: 3:05–3:45. Speaker script: demo-script-6-min.md. -->
 
@@ -59,7 +59,7 @@ size: 16:9
 
 - Quality: [test or repeatable check and result]
 - Codex: [task → artifact → human verification]
-- Reliability: [failure handling and known limit]
+- Reliability: [timeout, recovery, known limit]
 
 <!-- Timing: 3:45–4:40. Speaker script: demo-script-6-min.md. -->
 
@@ -84,6 +84,6 @@ size: 16:9
 
 - Built on-site: [new features and evidence]
 - Existing foundation: [none, or repository links]
-- Next milestone: [one measurable validation step]
+- Pilot: [users, success gate, cost, biggest risk]
 
 <!-- Timing: 5:30–6:00. Speaker script: demo-script-6-min.md. -->

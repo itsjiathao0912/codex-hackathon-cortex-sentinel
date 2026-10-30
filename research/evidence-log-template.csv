@@ -1,0 +1,10 @@
+criterion,claim,evidence_type,source_or_artifact,method_or_conditions,observed_result,limitation,status
+Problem framing,[user faces specific obstacle],[interview or observation],[anonymized note],[who and when],[observation],[small sample],unverified
+Quality of build,[core journey works],[end-to-end test],[test log],[build and fixture IDs],[passed/total],[prototype only],unverified
+Insight and originality,[specific mechanism improves outcome],[baseline and ablation],[comparison log],[same inputs and scoring],[difference],[alternatives reviewed only],unverified
+Real-world value,[user outcome improves],[task comparison],[timing and quality log],[same task and success definition],[before and after],[sample size and order effects],unverified
+Focus alignment,[chosen direction fits],[visible capability],[demo timestamp],[actual implemented behavior],[observed result],[scope],unverified
+Use of Codex,[Codex materially helped build],[iteration record],[prompt and diff and tests],[human decision and review],[verified change],[no inferred time savings],unverified
+Latency trade-offs,[configuration decision],[same-input comparison],[run log],[build model input and network],[timings quality and cost],[small sample; no reliability percentile claim],unverified
+Data privacy,[implemented protection],[data-flow and control test],[inventory and redacted trace],[app provider logs access retention deletion],[observed behavior],[planned or unknown controls],unverified
+Beyond hackathon,[pilot hypothesis],[pilot plan],[owner and test plan],[users duration outcome and stop gate],[not yet run],[cost assumptions dependencies and risk],planned

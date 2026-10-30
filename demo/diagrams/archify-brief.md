@@ -21,3 +21,7 @@ Use $archify to create an architecture diagram for Cortex Sentinel from this rep
 ## Expected outputs
 
 `candidate.json`, `cortex-sentinel-architecture.html`, validation receipts, and a slide export once real architecture is available. Keep secrets, credentials, and private user data out of diagram labels and exports.
+
+## Technical-review annotations
+
+Show where inputs cross into external model/services, which fields cross, data stores and log sinks, access boundaries, and any verified retention/deletion path. Distinguish implemented controls from planned or unknown controls. Attach measured latency only to the exact tested path/configuration, with units and sample size; do not invent timings. Keep the main slide readable and use a separate detailed view for judging questions.
