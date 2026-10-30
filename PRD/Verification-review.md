@@ -1,56 +1,31 @@
-# Three-loop verification and self-review
+# Kiểm tra ba vòng — phiên bản TP.HCM
 
-Date: 2026-10-31. Scope: the standalone map-first wireframe, not an operational fraud detector. All three loops were performed by the same author with browser checks and visual inspection, not by independent reviewers.
+Ngày: 31/10/2026. Tác giả tự review bằng browser automation và kiểm tra screenshot; không phải đánh giá độc lập hoặc kiểm định hệ thống fraud thật.
 
-## Loop 1 — Workflow correctness
+## Vòng 1 — Luồng và yêu cầu
 
-**Initial failures reproduced:** pausing erased an untested configuration-name edit; configuration cards continued saying Monitoring while the header said Paused. The editor held unsaved field values only in the DOM, while pause triggered a full rerender. Card status was hardcoded.
+Chín kiểm tra đạt: street tiles tải được; không có đường nối; marker xuất hiện; trang Cấu hình tách riêng; test mở khóa áp dụng; phiên bản tăng; tên cấu hình đồng bộ về map; mục Hồ sơ mở được; nhật ký có sự kiện áp dụng.
 
-**Changes:** capture configuration drafts on input; derive configuration status from the shared pause state.
+Kết luận: yêu cầu cấu trúc mới được đáp ứng; không còn wizard hay chế độ thế giới.
 
-**Retest:** six checks passed: draft survival, consistent paused status, replay enabling Apply, edits invalidating replay, applied name/version, and configuration-specific cases.
+## Vòng 2 — Bố cục và địa lý
 
-**Judgment:** the main selection/edit/apply workflow works as a prototype. It still uses scripted replay outputs rather than evaluating configuration changes against transaction records.
+Xem screenshot desktop và mobile. Không tràn ngang ở 1600, 1024, 768, 390 và 320 px. Desktop dùng menu dọc; màn hình nhỏ chuyển menu thành thanh gọn. Nền map và UI dùng màu trung tính/cam đất, không dùng xanh làm bảng màu chủ đạo.
 
-## Loop 2 — Visual usability and responsive behavior
+Phát hiện: đổi cấu hình trên điện thoại có thể đặt cả hai điểm ngoài khung nhìn. Sửa bằng fitBounds có padding, zoom tối đa 14 khi đổi cấu hình và quay lại map. Retest: cả C-201 và C-202 nằm trong khung. Bỏ biểu tượng màu mặc định khỏi prefix Leaflet, vẫn giữ attribution văn bản và liên kết.
 
-**Initial findings:** no horizontal overflow at 1600, 1024, 768, 390, or 320 pixels, but the map started around 953 pixels below the top on phones. Passing an overflow check did not mean the layout was map-first. Low-priority table rows were also amber while map markers were blue.
+## Vòng 3 — Biên và lỗi mạng
 
-**Changes:** compact configuration selector on small screens; expandable map-layer controls; matching blue treatment for Low priority. Mobile controls retain useful touch targets without stretching circular markers.
+Mười hai kiểm tra đạt: giữ draft quyết định qua chuyển mục; giữ draft cấu hình; chặn khoảng cách thập phân; giá trị hợp lệ chạy test; chỉnh lại bắt retest; hủy khôi phục; phê duyệt điều chỉnh; hoàn tác; pause; báo lỗi tile; hồ sơ dùng được khi tile bị chặn; retry tải lại map.
 
-**Retest:** all five widths retained no horizontal overflow. In the checked phone layouts, the map began around 405–424 pixels from the top. Mobile selection and layer expansion worked; Low rows matched the map. Before/after phone screenshots were inspected. The final desktop preview was refreshed.
+Cố ý chặn request tile trong trình duyệt để tái hiện mất bản đồ rồi bỏ chặn và thử lại. Network errors trong thử nghiệm này là có chủ đích. Không ghi nhận lỗi JavaScript runtime trong lần kiểm tra.
 
-**Judgment:** desktop is the strongest presentation. Mobile is functional and shows the map much earlier, but remains a long stacked workspace. Dense global marker clustering and label collision management are deferred.
+## Tự đánh giá
 
-## Loop 3 — Edge cases and regression checks
+- Đúng định hướng: tốt — TP.HCM chi tiết, không dây nối, menu mục riêng, màu cam đất.
+- Desktop: phù hợp demo; map lớn và detail đọc được.
+- Mobile: hoạt động, không tràn ngang; vẫn cần cuộn để đọc hồ sơ.
+- Chất lượng dữ liệu/mô hình: chưa đánh giá vì mọi hoạt động là giả lập.
+- Sẵn sàng production: chưa; thiếu backend, authentication, lưu bền vững, AI thật và đánh giá model.
 
-**Initial failures reproduced:** pause erased an unfinished analyst disposition/reason; replay accepted a distance of 26 km despite the input specifying 25 km increments.
-
-**Changes:** preserve per-case decision drafts through rerenders; validate finite distance, range, and increment before replay.
-
-**Retest:** eight checks passed: decision draft survival, invalid increment rejection, user-entered markup rendered as text, empty decision rejection, adaptation approval, rollback restoring baseline/priority, offline country rendering, and offline configuration switching. No JavaScript runtime errors were observed during this run.
-
-**Final spot checks:** keyboard Enter selected a focused configuration; phone markers stayed circular; the phone layout had no horizontal overflow. The standalone HTML was opened directly from disk with browser networking disabled and rendered all 177 embedded country geometries.
-
-## Self-assessment
-
-| Criterion | Assessment | Reason |
-| --- | --- | --- |
-| Matches the requested direction | Strong | One geographic workspace; own configurations selectable beside the map |
-| Workflow clarity | Good | Inspection, configuration testing/apply, and feedback stay in context |
-| Visual hierarchy | Good on desktop | Map dominates; supporting operational panels remain visible |
-| Mobile usability | Acceptable | Compact selector improves initial access; full workflow is still vertically long |
-| Interaction reliability | Good within tested paths | Reproduced state-loss and validation defects fixed and retested |
-| Fraud/AML effectiveness | Not assessed | No live engine, LLM investigation, measured replay, or trained GNN |
-| Production readiness | Not ready | No persistence, authentication, real notifications, or operational backend |
-
-**Overall judgment:** suitable for hackathon UX review and a scripted demonstration. It meets the map-first direction substantially better than the original wizard. It is not yet evidence that an autonomous fraud agent works or improves detection.
-
-## Remaining limitations
-
-- State resets on reload. Deliberately closing/changing a configuration discards its unfinished draft; there is no persistent draft system.
-- Geography uses a simple projection. IP uncertainty rings are illustrative; geographic links do not prove payment movement.
-- The activity feed is workspace-wide, while cases are configuration-specific.
-- Settings and adaptation use simplified version handling. The real product needs a unified, auditable policy lifecycle.
-- Keyboard checks covered configuration activation, not a comprehensive accessibility audit.
-- No load, production security, or statistical model evaluation was performed.
+Bản đồ cần Internet và dùng public OpenStreetMap tiles; không còn cam kết chạy map hoàn toàn offline như bản cũ. Chỉ phục vụ prototype tương tác. Nền map thể hiện khu vực trung tâm, không tuyên bố bao trùm toàn bộ ranh giới hành chính TP.HCM.

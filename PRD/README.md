@@ -1,29 +1,29 @@
-# Cortex Sentinel — map-first MVP
+# Cortex Sentinel — TP.HCM
 
-Updated 2026-10-31. This revision replaces the multi-screen wizard with a single monitoring workspace inspired by World Monitor.
+Cập nhật 31/10/2026. Wireframe tập trung vào TP.HCM, bản đồ đường phố chi tiết, không có dây nối, menu dọc và tông cam đất / trung tính.
 
-- [Interactive wireframe](wireframe.html): download or clone, then open in any modern browser. No server, API key, or network connection is required.
-- [Revised MVP flow and scope](MVP-user-flow.md)
-- [World Monitor research and design decisions](World-Monitor-research.md)
-- [Three-loop verification and self-review](Verification-review.md)
+- [Wireframe tương tác](wireframe.html)
+- [Luồng MVP hiện tại](MVP-user-flow.md)
+- [Kết quả kiểm tra ba vòng](Verification-review.md)
+- [Nghiên cứu World Monitor trước đây](World-Monitor-research.md) — tham khảo lịch sử, không còn là bố cục hiện tại.
 
-![Map-first wireframe preview](wireframe-preview.png)
+![Giao diện TP.HCM](wireframe-preview.png)
 
-## Try the revised flow
+## Mở demo
 
-1. Open the wireframe directly into the populated risk map.
-2. Select a saved monitor under **My configurations**. Its cases, scope, map markers, and selected case update together.
-3. Toggle layers, switch between Southeast Asia and World, change the period, drag to pan, or zoom.
-4. Select a marker or case row to inspect evidence in the context panel.
-5. Select **Edit configuration**, adjust fields, **Test changes**, then **Apply configuration** in the same panel.
-6. In Merchant coordination with the 24-hour period selected, open C-105 and save **Legitimate activity** with a reason.
-7. Use **Test & review improvement** in the feedback panel, approve the scripted candidate, then try rollback.
-8. Select Location anomalies and inspect C-202 for incomplete evidence. Try pause/resume and expanding the map.
+Clone/download thư mục PRD, giữ nguyên thư mục `assets`, rồi mở `wireframe.html` bằng trình duyệt hiện đại. Hoặc chạy `python3 -m http.server 8000` trong PRD và mở `http://localhost:8000/wireframe.html`.
 
-## Prototype boundaries
+Leaflet 1.9.4 được lưu trong `assets` với giấy phép BSD-2-Clause. Bản đồ nền OpenStreetMap cần Internet; attribution hiển thị trực tiếp. Không tải trước hoặc đóng gói dữ liệu tile. Khi tile lỗi, giao diện hiển thị thông báo và nút thử lại; trang Hồ sơ vẫn hoạt động.
 
-All case records, IPs, activity, evaluation outputs, and geographic activity locations are synthetic. Country boundaries are embedded Natural Earth geometry. The prototype uses no World Monitor application code or live services.
+## Bốn mục chính
 
-This is a wireframe, not a deployed investigator: tests are scripted, settings do not run a detection model, activity does not stream, and decisions/settings reset on reload. IP uncertainty rings are illustrative rather than scaled accuracy measurements. Links indicate related evidence, not proven cross-border payment flows. The relationship strip is not a trained GNN.
+1. **Bản đồ:** chọn cấu hình và khoảng thời gian; xem đường phố TP.HCM, chọn điểm hồ sơ. Không vẽ các đường liên kết.
+2. **Cấu hình:** chỉnh tên, sản phẩm, ngưỡng chuyển cấp, độ sâu quan hệ, khoảng cách và nhóm nhận cảnh báo; kiểm tra giả lập rồi áp dụng.
+3. **Hồ sơ rủi ro:** xem danh sách đầy đủ của cấu hình, bằng chứng và lưu kết luận; không phụ thuộc tile bản đồ.
+4. **Nhật ký:** theo dõi áp dụng cấu hình, quyết định và thao tác agent trong phiên demo.
 
-The flow document remains a proposal preceding formal BRD and PRD sign-off. Git history retains the earlier wizard design.
+Thử C-105 để xem vòng phản hồi: đánh dấu Hoạt động hợp lệ, nhập lý do, xem kiểm tra, phê duyệt và hoàn tác.
+
+## Giới hạn
+
+Các điểm hoạt động, hồ sơ và kết quả kiểm tra đều giả lập. Không gọi OpenAI, không có mô hình GNN, không có thực thi thanh toán. Bản nháp được giữ khi chuyển mục trong phiên; tải lại trang sẽ reset. Bản đồ mở ở khu vực trung tâm TP.HCM, không phải bản đồ phân định toàn bộ ranh giới hành chính thành phố. Các điểm không thể hiện vị trí chính xác của người dùng.

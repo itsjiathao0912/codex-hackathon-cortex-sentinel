@@ -1,101 +1,55 @@
-# Cortex Sentinel — map-first MVP flow
+# Cortex Sentinel — luồng MVP TP.HCM
 
-Date: 2026-10-31, Asia/Ho_Chi_Minh
+Ngày: 31/10/2026. Trạng thái: đề xuất UX và wireframe; chưa phải BRD/PRD được chốt.
 
-Status: revised proposal and interactive wireframe; formal BRD and PRD to follow.
+## Thay đổi theo yêu cầu
 
-## Product intent
+Chỉ theo dõi khu vực TP.HCM, có đường phố và địa danh thật. Bỏ bản đồ thế giới, các đường nối và kiểu gom mọi chức năng vào một màn hình. Dùng menu dọc với Bản đồ, Cấu hình, Hồ sơ rủi ro, Nhật ký. Bỏ bảng màu xanh, chuyển sang cam đất, nâu, xám ấm và nền sáng.
 
-Give ShopeePay risk and fraud analysts one geographic workspace to select their existing monitoring configurations, understand suspicious activity, inspect agent investigations, and record decisions. Cover ShopeePay and ShopeePayLater with synthetic data for the Autonomous & Adaptive AI hackathon track.
+## Người dùng và mục tiêu
 
-The existing engine continues to own ingestion and detection use cases. The proposed AI layer investigates alerts, assembles evidence, groups cases, and escalates within analyst-defined boundaries. Analyst feedback can produce scoped adjustments that are tested and approved before activation.
+Chuyên viên risk/fraud của ShopeePay và ShopeePayLater. Engine hiện có tiếp tục ingest dữ liệu và xử lý use case. Lớp AI đề xuất điều tra, gom bằng chứng và chuyển cấp trong phạm vi được cho phép; phản hồi chuyên viên tạo đề xuất điều chỉnh được kiểm tra và phê duyệt.
 
-## Design correction
+## 1. Bản đồ
 
-The earlier six-destination interface and mandatory setup journey were too fragmented. The revised design opens directly on a populated map. Configuration, investigation, and improvement use one contextual side panel; they do not navigate to separate pages.
+Mở trực tiếp vào khu vực trung tâm TP.HCM. Chọn một trong ba cấu hình mẫu: Giao dịch tại merchant, Bất thường vị trí, Thiết bị dùng chung. Chọn khoảng thời gian 1 giờ, 24 giờ hoặc 7 ngày.
 
-The distinction between a display layer and a detection rule remains explicit: hiding IP rings does not disable IP investigation. Changing a policy requires a test and explicit apply action.
+Map dùng Leaflet và tile OpenStreetMap, giữ attribution. Nền địa lý chuyển sang tông trung tính. Chỉ có các marker đánh số; không có polyline, vòng IP hoặc dây liên kết. Đổi cấu hình tự căn khung để nhìn thấy các hồ sơ. Người dùng có thể phóng to/thu nhỏ, kéo map và về trung tâm. Phạm vi kéo/zoom được giới hạn quanh TP.HCM; không có chế độ thế giới.
 
-## One workspace
+Click marker hoặc thẻ hồ sơ để xem bằng chứng, điểm chưa chắc chắn và nguồn vị trí. Marker minh họa các khu vực Bến Thành, Nguyễn Huệ, Thủ Thiêm, Tân Sơn Nhất, Văn Thánh và Chợ Lớn; không ngụ ý các địa điểm thật này có gian lận. Các tọa độ chỉ là dữ liệu demo.
 
-| Area | Purpose | Interaction |
-| --- | --- | --- |
-| Header | Agent status and selected policy | Pause/resume |
-| Map toolbar | Region, period, edit selected configuration | Change view or open inline editor |
-| My configurations | Saved monitors from the existing engine | Select one and update its map and cases |
-| Map | Geographic evidence, risk cases, related locations | Pan, zoom, select markers, toggle layers |
-| Context panel | Selected case, configuration editor, or improvement review | Inspect or act without leaving the map |
-| Cases below map | Accessible list of the selected configuration's cases | Open the same case context as a marker |
-| Agent activity | Recent trace and analyst actions | Inspect investigation history |
-| Feedback panel | Reviewed cases and scoped adaptation | Review, approve, or roll back |
+Nút Chỉnh cấu hình mở đúng cấu hình đó trong mục Cấu hình. Không có wizard bắt buộc trước khi xem map.
 
-The desktop map stays central. On narrower screens, a compact configuration selector replaces the left list, map layers expand on demand, context moves beneath the map, and panels stack. There is no mandatory walkthrough before monitoring.
+## 2. Cấu hình
 
-## Primary flow: select, inspect, decide
+Trang riêng với danh sách cấu hình bên trái và form bên phải. Các trường: tên, sản phẩm, mức chuyển cấp, độ sâu quan hệ, chênh lệch vị trí từ 1–100 km (số nguyên), nhóm nhận cảnh báo.
 
-1. **Open the monitor.** Show a seeded configuration, current cases, geographic evidence, agent status, and policy version immediately. The mock dataset is already connected.
-2. **Select your configuration.** Choose Merchant coordination, Location anomalies, or Shared-device clusters. Map markers, case list, scope, policy version, and selected case update together. Map position and display-layer choices are retained.
-3. **Focus the view.** Set a period, switch between World and Southeast Asia, pan/zoom, or toggle risk cases, relationship links, merchant markers, and IP uncertainty. Cases outside the time filter disappear from both map and list. Hidden markers remain accessible through the case list.
-4. **Select a case.** Click a marker or list entry. The context panel shows observed facts, counter-evidence, missing data, a compact relationship summary, and location provenance/limitations.
-5. **Record a disposition.** Choose Confirmed fraud, Legitimate activity, or Insufficient evidence and enter a reason. Save in place. The case list and feedback count update. A disposition does not trigger payment blocking or account freezing.
+Luồng: chỉnh → Kiểm tra giả lập → xem kết quả tại chỗ → Áp dụng cấu hình. Thay đổi sau khi kiểm tra làm vô hiệu kết quả và nút Áp dụng. Áp dụng tăng phiên bản và ghi nhật ký. Hủy thay đổi khôi phục cấu hình đã áp dụng. Bản nháp được giữ khi chuyển mục trong phiên; không persist qua reload.
 
-## Configuration flow: edit in context
+Địa chỉ, số lượng và cấu hình không phải bằng chứng hiệu quả mô hình. Replay trong wireframe là kết quả cố định, không tính lại từ giao dịch.
 
-1. Select a saved configuration and click **Edit configuration**.
-2. The context panel becomes an editor containing its name, escalation priority, graph depth, and location mismatch threshold. Defaults are loaded from that configuration.
-3. Click **Test changes** to review the mock replay in the same panel. Invalid names or distance values prevent a test.
-4. Click **Apply configuration** after testing. The selected configuration increments its version, the activity log records the action, and the panel returns to case context.
-5. Further edits after a test invalidate the result and disable Apply until the analyst retests. Closing the editor discards the draft.
+## 3. Hồ sơ rủi ro
 
-These four exposed fields are enough to explore the configuration interaction. Dataset connection, use-case creation, and deeper detection-rule authoring stay in the existing engine. Escalation destinations, investigation budgets, and detailed policy semantics remain requirements to settle in the PRD rather than new mandatory setup pages.
+Danh sách hồ sơ của cấu hình đang chọn, độc lập với thời gian lọc của map. Click mã hồ sơ để mở detail cùng trang. Ghi một trong ba kết luận: Xác nhận gian lận, Hoạt động hợp lệ, Chưa đủ bằng chứng; bắt buộc nhập lý do.
 
-## Improvement flow: review without navigation
+Bản nháp kết luận giữ khi đổi mục hoặc tạm dừng. Kết luận đã lưu cập nhật cả map và bảng. Chưa đủ bằng chứng không được hiểu là hồ sơ đã an toàn. Wireframe không có workflow đóng/mở lại hoàn chỉnh.
 
-1. Review C-105, the legitimate shared-IP example, and record Legitimate activity with a reason.
-2. The feedback panel offers a candidate scoped to merchant M-031, independent devices, and ordinary timing.
-3. **Test & review improvement** replaces the context panel with a scripted baseline/candidate comparison.
-4. The analyst approves explicitly or cancels. Approval changes the illustrative C-105 priority to Low and records the action. Rollback restores Review priority and baseline adaptation state.
+Với C-105, kết luận Hoạt động hợp lệ cho phép xem đề xuất giảm trọng số IP dùng chung, chỉ với M-031 và điều kiện thiết bị/nhịp giao dịch độc lập. So sánh giả lập: chuyển nhầm 20 → 12/80; phát hiện 18/20 và bỏ sót 2/20 không đổi. Cần phê duyệt; có hoàn tác. Đây không phải học mô hình thực tế.
 
-Illustrative comparison: among 20 fraud and 80 legitimate cases, both versions escalate 18 fraud cases and miss 2. False escalations change from 20 to 12. These are scripted values, not evidence of performance. A real implementation must use held-out labeled cases, prevent retrieval leakage, evaluate missed fraud, and retain versioned audit records. The prototype does not fine-tune or call a model.
+## 4. Nhật ký
 
-## Autonomy and failures
+Trang riêng chứa sự kiện trong phiên: thay đổi trạng thái agent, áp dụng cấu hình, lưu kết luận và phê duyệt/hoàn tác điều chỉnh. Hiện là bộ nhớ trình duyệt, không phải audit backend bền vững.
 
-Allowed automatically in the proposed product: enrich alerts, query relationships, group related activity, assemble evidence, and route configured escalations. Approval required: production policy changes and learned adjustments. Excluded: payment blocking, account freezing, credit decisions, and regulatory submissions.
+## Lỗi và quyền tự chủ
 
-Pause retains visible cases and represents queuing future work. C-202 demonstrates an enrichment outage: two retries have failed, IP evidence is unavailable, and the displayed geographic point is the merchant's registered city. The case remains incomplete rather than being cleared.
+- Tile không tải được: thông báo rõ, có nút thử lại; danh sách hồ sơ vẫn hoạt động.
+- C-202 minh họa tra cứu IP lỗi; dùng vị trí merchant và ghi rõ thiếu bằng chứng.
+- Tạm dừng: trạng thái đổi, giữ dữ liệu và bản nháp. Chỉ mô phỏng việc xếp hàng công việc mới.
+- Agent đề xuất được điều tra, gom hồ sơ và chuyển cấp. Không tự chặn tiền, khóa tài khoản hoặc gửi báo cáo pháp lý.
+- Các thay đổi policy và điều chỉnh học từ chuyên viên cần kiểm tra và phê duyệt.
 
-In the implementation, delivery failures, acknowledgment deadlines, backup escalation, investigation budget exhaustion, and unavailable data must remain visible in this workspace. They do not require separate navigation destinations.
+## Phạm vi thực tế của artifact
 
-## Geographic and network evidence
+Ba cấu hình, sáu hồ sơ giả lập trong TP.HCM, bốn mục điều hướng, map đường phố có zoom/pan, chỉnh cấu hình/phiên bản, quyết định có lý do, nhật ký, cải tiến giả lập và rollback. Không có AI API, GNN, live stream, tài khoản thật, thông báo thật, persist backend hoặc đánh giá thống kê.
 
-Use actual country geometry and synthetic coordinates for the hackathon. Default to Southeast Asia, where the relevant demo cases are located, while allowing a world overview.
-
-- Country outlines: Natural Earth public-domain geometry, embedded for offline rendering.
-- Case point: synthetic observed/associated location, with a merchant-city fallback when IP enrichment is unavailable.
-- Merchant marker: synthetic related merchant location.
-- Dashed link: related activity, not proof of a money transfer or a fraud ring.
-- Dashed uncertainty area: illustrative IP uncertainty, not a precise device position or a scaled accuracy guarantee.
-- Relationship summary: mock account/device/merchant associations, not a trained GNN.
-
-Observed facts and analyst/model assessments remain separate. Shared devices and IPs alone do not establish fraud. No settlement or beneficial ownership relationship is inferred from missing fields.
-
-## Mock scope and measurable outcomes
-
-The wireframe contains three saved configurations and six mock cases. The map, table, editor, decisions, learning review, and local activity log are interactive. Configuration values and decisions are kept only in memory and reset on reload.
-
-For the eventual MVP, demonstrate three outcomes: a coordinated merchant case escalated with evidence; a legitimate public-network case corrected through reviewed feedback; and incomplete enrichment handled without silently clearing a case. Measure false escalations alongside missed fraud and investigation effort. Do not present transaction volume as prevented losses.
-
-## Not implemented by this wireframe
-
-No real ingestion, streaming, authentication, OpenAI calls, persistent backend, actual replay evaluator, graph inference, geolocation service, notification delivery, or regulatory action. Rule edits do not recompute risk from transactions. The map uses a simple equirectangular projection and does not implement production marker clustering. Baseline and learned-policy versions need a unified lifecycle in the real product.
-
-## Remaining BRD / PRD decisions
-
-- Existing-engine integration and full synthetic schema.
-- Team capacity and hackathon time budget.
-- Meaning of risk levels, escalation ownership, acknowledgment, and routing.
-- Role permissions, evidence provenance, retention, and case resolution/reopening.
-- True evaluation gates, minimum labeled evidence, adaptation expiry, and rollback semantics.
-- Whether trained GNN scoring adds value beyond relationship queries.
-
-See [research and design rationale](World-Monitor-research.md) and [wireframe](wireframe.html).
+Trước khi chốt BRD/PRD: xác nhận hợp đồng với engine, schema, tiêu chí chuyển cấp, người phê duyệt, vòng đời hồ sơ, dữ liệu nhãn và tiêu chí đánh giá thực tế. Thiết kế này thay thế các mô tả map thế giới và single-workspace trước đó.

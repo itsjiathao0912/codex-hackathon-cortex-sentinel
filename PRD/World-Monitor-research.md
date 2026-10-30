@@ -1,3 +1,5 @@
+> Historical design research. Superseded by the HCMC-only, four-section design on 2026-10-31. Current behavior is documented in MVP-user-flow.md.
+
 # World Monitor research and design rationale
 
 Reviewed 2026-10-31. The user supplied the app, repository documentation, and a screenshot as design references.
