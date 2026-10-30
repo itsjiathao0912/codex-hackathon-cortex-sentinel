@@ -1,5 +1,7 @@
 # Product Requirements Document — Cortex Sentinel MVP
 
+[Tiếng Việt](vi/PRD.md) · English
+
 Version: 1.0 · Date: 2026-10-31 · Language: English
 
 Status: implementation-ready proposal. This document specifies target behavior; the current HTML is a prototype, not fulfillment of the backend requirements. See [BRD](BRD.md), [implementation design](Implementation-design.md), and [architecture rationale](Architecture-rationale.md).

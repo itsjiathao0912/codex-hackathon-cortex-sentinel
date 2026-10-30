@@ -1,5 +1,7 @@
 # Architecture rationale — MVP implementation decisions
 
+[Tiếng Việt](vi/Architecture-rationale.md) · English
+
 Date: 2026-10-31. English companion to [Implementation-design.md](Implementation-design.md). The [PRD](PRD.md) is the current target-behavior contract; this document explains why the choices fit the MVP. The earlier Vietnamese technical design remains background, not proof of implementation.
 
 ## Current implementation versus target

@@ -93,3 +93,11 @@ Mở `http://localhost:8000/wireframe.html`. Bản đồ nền cần mạng; dù
 - [Architecture decisions and justification](PRD/Architecture-rationale.md)
 
 These specify target MVP behavior; the current wireframe is not a completed AI backend.
+
+## Tài liệu song ngữ / Bilingual requirements
+
+| Document | English | Tiếng Việt |
+|---|---|---|
+| BRD | [English](PRD/BRD.md) | [Tiếng Việt](PRD/vi/BRD.md) |
+| PRD | [English](PRD/PRD.md) | [Tiếng Việt](PRD/vi/PRD.md) |
+| Architecture rationale | [English](PRD/Architecture-rationale.md) | [Tiếng Việt](PRD/vi/Architecture-rationale.md) |

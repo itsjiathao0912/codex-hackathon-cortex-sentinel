@@ -1,5 +1,7 @@
 # Business Requirements Document — Cortex Sentinel MVP
 
+[Tiếng Việt](vi/BRD.md) · English
+
 Version: 1.0 · Date: 2026-10-31 (Asia/Ho_Chi_Minh)
 
 Status: implementation-ready proposal for stakeholder review, not production authorization. Language: English. Owner: product team; named business sponsor and technical owner remain to be assigned.

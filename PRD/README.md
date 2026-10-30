@@ -38,3 +38,11 @@ Các điểm hoạt động, hồ sơ và kết quả kiểm tra đều giả l�
 - [Architecture decisions and justification](Architecture-rationale.md)
 
 These specify target MVP behavior; the current wireframe is not a completed AI backend.
+
+## Tài liệu song ngữ / Bilingual requirements
+
+| Document | English | Tiếng Việt |
+|---|---|---|
+| BRD | [English](BRD.md) | [Tiếng Việt](vi/BRD.md) |
+| PRD | [English](PRD.md) | [Tiếng Việt](vi/PRD.md) |
+| Architecture rationale | [English](Architecture-rationale.md) | [Tiếng Việt](vi/Architecture-rationale.md) |
