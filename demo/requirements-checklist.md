@@ -23,7 +23,7 @@ Source: the two user-provided images titled “Judging Criteria” and “Hackat
 
 ## Current status
 
-Repository stays private at the user's explicit request. No visibility change was made. If using the existing-project path, resolve the public-repository requirement before submission. The supplied screenshots do not establish a separate repository-visibility rule for the from-scratch path.
+Repository is public at the user's explicit request as of 31 October 2026. The stored participants briefing requests a new public repository in its submission checklist; see `research/sources/2026-sea-openai-codex-hackathon-participants-briefing.txt`.
 
 On-site status, project origin, official build direction, submission deadline and submission URL: [TO CONFIRM]. Six minutes is the user's requested presentation duration; it is not stated in the supplied screenshots.
 

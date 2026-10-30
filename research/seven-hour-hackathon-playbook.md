@@ -6,7 +6,7 @@ Research date: 31 October 2026. Context: Codex Shopee Hackathon / Sea x OpenAI C
 
 The [official Vietnam event site](https://codexhackathon.sea.com/) gives a 10:00–17:00 hacking window and three directions: Autonomous & Adaptive AI; AI-Native Products & Operations; Deep Domain AI. Teams may address one or several. Choose one primary direction and demonstrate it clearly.
 
-There is an unresolved rule conflict: the website FAQ says to build from scratch, whereas the supplied event-day screenshot permits substantial extensions to existing projects with attribution and a new public repository. Ask an organizer which rule controls before relying on existing project code. Do not claim compliance without clarification. The repository remains private per the user's instruction. Templates and preparation should not be represented as work completed during the judged on-site window.
+There is an unresolved rule conflict: the website FAQ says to build from scratch, whereas the supplied event-day screenshot permits substantial extensions to existing projects with attribution and a new public repository. Ask an organizer which rule controls before relying on existing project code. Do not claim compliance without clarification. The repository was made public at the user's request on 31 October 2026. Templates and preparation should not be represented as work completed during the judged on-site window.
 
 ## 1. Problem framing: a 45-minute process
 
