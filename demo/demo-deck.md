@@ -3,6 +3,15 @@ marp: true
 theme: default
 paginate: true
 size: 16:9
+style: |
+  section {
+    background: #ffffff;
+    color: #2e3847;
+    font-family: Arial, sans-serif;
+  }
+  h1 { color: #172942; }
+  h2 { color: #3d5775; font-weight: 400; }
+  section::after { color: #6b7887; }
 ---
 
 # Cortex Sentinel
