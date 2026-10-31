@@ -46,3 +46,8 @@ These specify target MVP behavior; the current wireframe is not a completed AI b
 | BRD | [English](BRD.md) | [Tiếng Việt](vi/BRD.md) |
 | PRD | [English](PRD.md) | [Tiếng Việt](vi/PRD.md) |
 | Architecture rationale | [English](Architecture-rationale.md) | [Tiếng Việt](vi/Architecture-rationale.md) |
+
+## Initial proposal / Ý tưởng ban đầu
+
+- [Guardline original proposal (PDF)](references/guardline-initial-proposal.pdf) — preserved unchanged; source concept, not current implementation.
+- [Comparison with the current MVP](Guardline-comparison.md) — retained ideas, scope differences, conflicts and recommended synthesis.
